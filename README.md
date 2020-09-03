@@ -2,7 +2,7 @@
 
 This project use the official plugin [video_player](https://pub.dev/packages/video_player) and the state manager [getx](https://pub.dev/packages/get)
 
-You can known more about getx [here](https://www.youtube.com/watch?v=PTjj0DFK8BA&list=PLV0nOzdUS5XtParoZLgKoVwNSK9zROwuO)
+You can known more about getx [here (free course in spanish)](https://www.youtube.com/watch?v=PTjj0DFK8BA&list=PLV0nOzdUS5XtParoZLgKoVwNSK9zROwuO)
 
 These code is part of the course (Flutter Avanzado) available on [meedu.app](https://meedu.app/curso/flutter-avanzado)
 

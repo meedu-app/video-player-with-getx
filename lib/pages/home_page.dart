@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
             child: OrientationBuilder(
               builder: (ctx, orientation) {
                 final player = MPlayer(
+                  key: _.playerKey,
                   controller: _.mPlayerController,
                 );
 

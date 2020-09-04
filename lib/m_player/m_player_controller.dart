@@ -76,6 +76,7 @@ class MPlayerController extends GetxController {
       VideoPlayerController tmp;
 
       if (_videoController != null) {
+        await _videoController.pause();
         tmp = _videoController;
       }
 

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:m_player/m_player/m_player_controller.dart';
@@ -7,6 +8,8 @@ import 'package:m_player/utils/videos.dart' as v;
 class HomeController extends GetxController {
   List<Video> _videos = [];
   List<Video> get videos => _videos;
+
+  final GlobalKey playerKey = GlobalKey();
 
   MPlayerController _mPlayerController;
   MPlayerController get mPlayerController => _mPlayerController;

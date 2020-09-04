@@ -10,11 +10,15 @@ enum SourceStatus { none, loading, loaded, error }
 enum PlayingStatus { stopped, playing, paused }
 
 class MPlayerController extends GetxController {
-  final List<DeviceOrientation> defaultOrientations;
+  static MPlayerController get to => Get.find<MPlayerController>();
+
+  List<DeviceOrientation> _defaultOrientations = DeviceOrientation.values;
+
+  set defaultOrientations(List<DeviceOrientation> v) {
+    _defaultOrientations = v;
+  }
 
   VideoPlayerController _videoController;
-
-  MPlayerController(this.defaultOrientations);
 
   VideoPlayerController get videoController => _videoController;
 
@@ -76,6 +80,7 @@ class MPlayerController extends GetxController {
       VideoPlayerController tmp;
 
       if (_videoController != null) {
+        await _videoController.pause();
         tmp = _videoController;
       }
 
@@ -215,7 +220,7 @@ class MPlayerController extends GetxController {
       transition: Transition.fade,
       duration: Duration.zero,
     );
-    await SystemChrome.setPreferredOrientations(this.defaultOrientations);
+    await SystemChrome.setPreferredOrientations(this._defaultOrientations);
     await SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     _fullscreen.value = false;
   }

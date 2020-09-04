@@ -8,18 +8,16 @@ class HomeController extends GetxController {
   List<Video> _videos = [];
   List<Video> get videos => _videos;
 
-  MPlayerController _mPlayerController;
+  MPlayerController _mPlayerController = MPlayerController.to;
   MPlayerController get mPlayerController => _mPlayerController;
 
   @override
   void onInit() {
-    if (Get.context.isTablet) {
-      _mPlayerController = MPlayerController(DeviceOrientation.values);
-    } else {
-      _mPlayerController = MPlayerController([
+    if (!Get.context.isTablet) {
+      _mPlayerController.defaultOrientations = [
         DeviceOrientation.portraitUp,
         DeviceOrientation.portraitDown,
-      ]);
+      ];
     }
   }
 

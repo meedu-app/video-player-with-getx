@@ -12,7 +12,6 @@ class MPlayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MPlayerController>(
-      init: controller,
       builder: (_) => AspectRatio(
         aspectRatio: 16 / 9,
         child: Container(
